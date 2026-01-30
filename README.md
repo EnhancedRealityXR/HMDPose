@@ -30,10 +30,11 @@ This allows you to use your Headset as a head tracker for PC games or other appl
 ## Usage
 
 1.  **Start Opentrack** on your PC.
+    - Install and run [Opentrack](https://github.com/opentrack/opentrack)
     - Set **Input** to **UDP over network**.
     - Click the settings icon next to Input (hammer icon).
     - Note the **Port** (default is usually 4242).
-    - Set **Output** to Mouse Emulation (or anything else you like).
+    - Set **Output** to Mouse Emulation (or anything else you prefer).
     - Click **Start** in Opentrack.
 
 2.  **Get local IP** on your PC.
