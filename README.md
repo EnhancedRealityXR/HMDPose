@@ -19,7 +19,7 @@ This allows you to use your Headset as a head tracker for PC games or other appl
 
 ## Installation
 
-1.  **Build the APK**: Open this project in Unity and build the Android APK.
+1.  **Build the APK (alternatively download from [Releases](https://github.com/EnhancedRealityXR/HMDPose/releases))**: Open this project in Unity and build the Android APK.
     - Ensure your Build Settings are switched to **Android**.
     - Build the project.
 2.  **Install on Quest**: Use ADB or SideQuest to install the generated `.apk` file onto your Quest 3.
