@@ -1,8 +1,8 @@
 # HMDPose for Meta Quest 3
 
-HMDPose is a Unity-based application designed for the Meta Quest 3. It runs as a flatscreen (2D) background application and forwards the Head Mounted Display (HMD) pose (position and rotation) to [Opentrack](https://github.com/opentrack/opentrack) over the local network via UDP.
+HMDPose is an Android OpenXR Unity application. It runs as a flatscreen (2D) background application and forwards the Head Mounted Display (HMD) pose (position and rotation) to [Opentrack](https://github.com/opentrack/opentrack) over the local network via UDP.
 
-This allows you to use your Quest 3 as a head tracker for PC games or other applications that support Opentrack, even while the Quest is running other 2D Android apps or just sitting in the background.
+This allows you to use your Headset as a head tracker for PC games or other applications that support Opentrack, even while simultaneously running other 2D apps or any immersive app/game on your headset. For example, HMDPose adds 3-DOF and 6-DOF capabilities to non VR games that can be played through existing PCVR solutions such as ALVR/VirtualDesktop/SteamLink/MetaLink. 
 
 ## Features
 
@@ -13,9 +13,9 @@ This allows you to use your Quest 3 as a head tracker for PC games or other appl
 
 ## Requirements
 
-- Meta Quest 3 (or other compatible Meta Quest headset).
+- Meta Quest Headset (or other compatible headset).
 - PC running [Opentrack](https://github.com/opentrack/opentrack).
-- Both devices connected to the same local network (Wi-Fi).
+- Both devices connected to the same local network (Wi-Fi) or a internet bridge/vpn solution.
 
 ## Installation
 
@@ -33,45 +33,27 @@ This allows you to use your Quest 3 as a head tracker for PC games or other appl
     - Set **Input** to **UDP over network**.
     - Click the settings icon next to Input (hammer icon).
     - Note the **Port** (default is usually 4242).
+    - Set **Output** to Mouse Emulation (or anything else you like).
     - Click **Start** in Opentrack.
 
-2.  **Launch HMDPose** on your Quest 3.
-    - Go to your App Library -> (Search/Filter for Unknown Sources if necessary).
+2.  **Get local IP** on your PC.
+    - Open **Command Prompt** on your PC by searching for **CMD** in Windows Search.
+    - Type "ipconfig" in CMD and hit enter.
+    - Note the displayed (local) IPV4 Address.
+
+3.  **Launch HMDPose** on your Quest 3.
+    - Go to your App Library -> (Unknown Sources).
     - Launch **HMDPose**.
+    - Exit **HMDPose**
+    - Connect your headset to the PC and allow file access (in the Headset).
+    - Use SideQuest or ADB to insert your previously noted IP and Port in the following file **Android/data/com.EnhancedReality.HMDPose/opentrack.cfg** (Save to Desktop -> Edit IP/Port -> Overwrite on Headset)
+    - Launch **HMDPose** again. 
 
-3.  The app will immediately start sending UDP packets to the configured IP address.
+4.  The app will immediately start sending UDP packets to the configured IP address. **IMPORTANT**: When using HMDpose simultaneously with another app on the headset, make sure the HMDpose app is in the foreground while minimized (invisible). Otherwise HMDPose cannot track your head accurately which will result in a choppy/laggy experience. 
 
-## Configuration
+## Supported Devices
 
-By default, the app sends data to:
-- **IP**: `192.168.178.35`
-- **Port**: `4242`
-
-To change this, you need to edit the `opentrack.cfg` file on the Quest.
-
-1.  Run the app once to generate the default configuration file.
-2.  Connect your Quest to your PC via USB.
-3.  Navigate to the app's persistent data path. This is typically located at:
-    `/sdcard/Android/data/com.yourcompany.HMDPose/files/opentrack.cfg`
-    *(Note: The package name `com.yourcompany.HMDPose` depends on your Unity Player Settings)*
-4.  Open `opentrack.cfg` and update the IP and Port to match your PC's local IP address and Opentrack port.
-
-    ```ini
-    # Opentrack UDP config
-    opentrack_ip=192.168.1.100
-    opentrack_port=4242
-    ```
-5.  Restart the app on your Quest.
-
-## Data Format
-
-The app sends a UDP packet containing 6 `double` values (little-endian):
-1.  **X** Position (cm)
-2.  **Y** Position (cm)
-3.  **Z** Position (cm)
-4.  **Yaw** (degrees)
-5.  **Pitch** (degrees)
-6.  **Roll** (degrees)
+- Tested on Meta Quest 3, but should work on any standalone Headset that supports OpenXR. May require adjustments to the Unity Android/OpenXR Build settings.
 
 ## License
 

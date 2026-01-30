@@ -8,7 +8,7 @@ using UnityEngine.XR;
 public class QuestHMDToOpentrackUDP : MonoBehaviour
 {
     [Header("Defaults (used if config missing)")]
-    public string defaultIpAddress = "192.168.178.35";
+    public string defaultIpAddress = "192.168.178.1";
     public int defaultPort = 4242;
 
     [Header("Translation")]
