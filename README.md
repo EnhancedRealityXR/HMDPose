@@ -7,7 +7,7 @@ This allows you to use your Headset as a head tracker for PC games or other appl
 ## Features
 
 - **Real-time Pose Forwarding**: Sends HMD position and rotation data to Opentrack.
-- **Background Operation**: Runs as a 2D Android app with multitasking support, allowing it to function in the background.
+- **Background Operation**: Runs as a 2D Android app with seamless multitasking support, allowing it to function in the background.
 - **Configurable**: IP address and port can be customized via a configuration file.
 - **Lightweight**: Minimal overhead.
 
@@ -54,6 +54,10 @@ This allows you to use your Headset as a head tracker for PC games or other appl
 ## Supported Devices
 
 - Tested on Meta Quest 3, but should work on any standalone Headset that supports OpenXR. May require adjustments to the Unity Android/OpenXR Build settings.
+
+## Implementing HMD Pose in your own OpenXR Unity Project
+
+- Copy **Assets/Scenes/ForwardHMDPose.cs** to the matching directory of your OpenXR Unity Project and attach the script to an empty GameObject in the Scene.
 
 ## License
 
