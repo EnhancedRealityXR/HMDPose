@@ -50,7 +50,7 @@ This allows you to use your Headset as a head tracker for PC games or other appl
     - Use SideQuest or ADB to insert your previously noted IP and Port in the following file **Android/data/com.EnhancedReality.HMDPose/opentrack.cfg** (Save to Desktop -> Edit IP/Port -> Overwrite on Headset)
     - Launch **HMDPose** again. 
 
-4.  The app will immediately start sending UDP packets to the configured IP address. **IMPORTANT**: When using HMDpose simultaneously with another app on the headset, make sure the HMDpose app is in the foreground while minimized (invisible). Otherwise HMDPose cannot track your head accurately which will result in a choppy/laggy experience. 
+4.  The app will immediately start sending UDP packets to the configured IP address. **IMPORTANT**: When using HMDpose simultaneously with another app on the headset, make sure the HMDpose app is in the foreground while minimized (invisible). Otherwise HMDPose cannot track your Headset accurately which will result in a choppy/laggy experience. 
 
 ## Supported Devices
 
