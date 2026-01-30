@@ -1,4 +1,4 @@
-# HMDPose for Meta Quest 3
+# HMDPose - HMD Pose forwarding for standalone OpenXR Headsets with Opentrack support
 
 HMDPose is an Android OpenXR Unity application. It runs as a flatscreen (2D) background application and forwards the Head Mounted Display (HMD) pose (position and rotation) to [Opentrack](https://github.com/opentrack/opentrack) over the local network via UDP.
 
