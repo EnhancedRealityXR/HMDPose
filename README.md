@@ -15,7 +15,7 @@ This allows you to use your Headset as a head tracker for PC games or other appl
 
 - Meta Quest Headset (or other compatible headset).
 - PC running [Opentrack](https://github.com/opentrack/opentrack).
-- Both devices connected to the same local network (Wi-Fi) or a internet bridge/vpn solution.
+- Both devices connected to the same local network (Wi-Fi) or an internet bridge/vpn solution.
 
 ## Installation
 
